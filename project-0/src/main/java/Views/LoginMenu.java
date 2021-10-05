@@ -147,7 +147,7 @@ public class LoginMenu {
             System.out.println("Input amount you want to withdraw: ");
             String text = sc.nextLine();
             withdraw = Integer.parseInt(text);
-            System.out.println("Input accountId of account you want to deposit to: ");
+            System.out.println("Input accountId of account you want to withdraw from: ");
             String text2 = sc.nextLine();
             accountId = Integer.parseInt(text2);
         } catch (Exception ex) {

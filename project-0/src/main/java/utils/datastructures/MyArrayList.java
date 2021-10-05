@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 
 /**
- * Custom arrayList class
+ * Custom arrayList class without using Collections API
  */
 public class MyArrayList<T> implements MyListInterface<T>{
     int size;
@@ -25,6 +25,12 @@ public class MyArrayList<T> implements MyListInterface<T>{
         return size;
     }
 
+
+    /**
+     * @param t Less restriction on type of parameter used in method
+     *          Increasing the size of the ArrayList after adding allows the addition of more values
+     *
+     */
     @Override
     public void add(T t) {
         if (size == array.length - 1) {
@@ -51,6 +57,10 @@ public class MyArrayList<T> implements MyListInterface<T>{
         size++;
     }
 
+    /**
+     * @param index signifies where in the created ArrayList that the desired item is
+     * @return returns the part of the array where the index is called
+     */
     @Override
     public T get(int index) {
         if (index < 0 || index > size) {
@@ -61,8 +71,6 @@ public class MyArrayList<T> implements MyListInterface<T>{
 
     @Override
     public void remove(int index) {
-        // if index is negative or greater than size of size, we throw
-        // Exception.
         if (index < 0 || index > size - 1) {
             throw new IndexOutOfBoundsException("Invalid: Out of array's range");
         }
@@ -98,6 +106,5 @@ public class MyArrayList<T> implements MyListInterface<T>{
     private void growArray() {
         maxSize *= 2;
         array = Arrays.copyOf(array, maxSize);
-
     }
 }

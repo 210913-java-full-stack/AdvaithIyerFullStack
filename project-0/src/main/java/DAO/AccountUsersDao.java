@@ -9,6 +9,8 @@ import java.util.Scanner;
 
 /**
  * This class is used to access data from the accounts_users table in the database
+ * Each method runs the respective SQL code embedded inside the method
+ * The last method closes the connection
  */
 public class AccountUsersDao implements AccountUsersCrud{
 

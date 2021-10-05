@@ -1,5 +1,8 @@
 package utils.datastructures;
 
+/**
+ * @param <E> allows the use of a variety of data types, including classes and interfaces
+ */
 public interface MyListInterface<E> {
     int size();
 

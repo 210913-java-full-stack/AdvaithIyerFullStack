@@ -6,6 +6,8 @@ import java.sql.*;
 
 /**
  * This class is used to access data from the account table in the database
+ * Each method runs the respective SQL code embedded inside the method
+ * The last method closes the connection
  */
 public class AccountDao implements AccountCrud{
 

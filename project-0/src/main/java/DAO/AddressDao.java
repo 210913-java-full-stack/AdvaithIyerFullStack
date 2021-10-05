@@ -9,6 +9,8 @@ import java.util.Scanner;
 
 /**
  * This class is used to access data from the address table in the database
+ * Each method runs the respective SQL code embedded inside the method
+ * The last method closes the connection
  */
 public class AddressDao implements AddressCrud{
 

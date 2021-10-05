@@ -226,3 +226,5 @@ WHERE ac.account_id IN (SELECT DISTINCT ac.account_id ac
 UPDATE customers
 SET name = REPLACE(name, 'Amanda Smith', 'Amanda Lastname')
 WHERE name = 'Amanda Smith'; 
+
+

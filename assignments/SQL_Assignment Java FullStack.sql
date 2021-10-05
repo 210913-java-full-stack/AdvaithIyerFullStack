@@ -170,20 +170,23 @@ SELECT * FROM customers WHERE name LIKE "%Smith";
 SELECT SUM(balance) AS "Total Balance of Smiths"
 FROM accounts
 WHERE account_id IN (SELECT ac.account_id 
-					 FROM accounts_customers ac
-	   				 JOIN customers c ON ac.customer_id = c.customer_id
-	  				 WHERE name LIKE "%Smith");
+		     FROM accounts_customers ac
+		     JOIN customers c ON ac.customer_id = c.customer_id
+		     WHERE name LIKE "%Smith");
+		     
 # Get the name and address of any customer with less than $50 in an account. (No duplicates!)
 SELECT DISTINCT c.name, ad.address
 FROM customers c
 JOIN address ad ON c.address_id = ad.address_id
 WHERE c.customer_id IN (SELECT c.customer_id 
-					   FROM customers c 
-					   JOIN accounts_customers ac ON c.customer_id = ac.customer_id
-					   WHERE ac.account_id IN (SELECT ac.account_id FROM accounts_customers ac
-					   						   JOIN accounts a ON ac.account_id = a.account_id
-					   						   WHERE balance < 50)
-					   );
+			FROM customers c 
+			JOIN accounts_customers ac ON c.customer_id = ac.customer_id
+			WHERE ac.account_id IN (SELECT ac.account_id 
+						FROM accounts_customers ac
+					        JOIN accounts a ON ac.account_id = a.account_id
+						WHERE balance < 50
+					       )
+			   );
 # Get a list of all the customers who live in Texas.
 SELECT c.name
 FROM customers c 
@@ -197,32 +200,34 @@ WHERE ac.account_id IN (SELECT ac.account_id ac
 						FROM accounts_customers ac
 						JOIN customers c ON ac.customer_id = c.customer_id 
 						WHERE c.customer_id IN (SELECT c.customer_id
-												FROM customers c 
-												JOIN address ad ON c.address_id = ad.address_id 
-												WHERE ad.state = "NY"
-												)
+									FROM customers c 
+									JOIN address ad ON c.address_id = ad.address_id 
+									WHERE ad.state = "NY"
+									)
 						);
 # Transfer $199.99 from Jason Smith to Amanda Smith
 UPDATE accounts a
 JOIN accounts_customers ac ON a.account_id = ac.account_id
 SET a.balance = a.balance - 199.99
 WHERE ac.account_id IN (SELECT DISTINCT ac.account_id ac
-						FROM accounts_customers ac
-						JOIN customers c ON ac.customer_id = c.customer_id 
-						WHERE c.name = "Jason Smith"
-						HAVING COUNT(name) > 1
-						);
+			FROM accounts_customers ac
+			JOIN customers c ON ac.customer_id = c.customer_id 
+			WHERE c.name = "Jason Smith"
+			HAVING COUNT(name) > 1
+			);
 UPDATE accounts a
 JOIN accounts_customers ac ON a.account_id = ac.account_id 
 SET a.balance = a.balance + 199.99
 WHERE ac.account_id IN (SELECT DISTINCT ac.account_id ac
-						FROM accounts_customers ac
-						JOIN customers c ON ac.customer_id = c.customer_id 
-						WHERE c.name = "Amanda Smith"
-						HAVING COUNT(name) > 1
-						);
+			FROM accounts_customers ac
+			JOIN customers c ON ac.customer_id = c.customer_id 
+			WHERE c.name = "Amanda Smith"
+			HAVING COUNT(name) > 1
+			);
  
 # Change Amanda Smith's last name to "Lastname"
 UPDATE customers
 SET name = REPLACE(name, 'Amanda Smith', 'Amanda Lastname')
 WHERE name = 'Amanda Smith'; 
+
+

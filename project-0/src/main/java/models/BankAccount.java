@@ -6,6 +6,9 @@ public class BankAccount {
     protected String accountType;
     protected double balance;
 
+    /**
+     * @return allows for this class to return its data as a string
+     */
     public String toString() {
         return this.accountId + " - " + this.accountType + " - " + this.balance;
     }

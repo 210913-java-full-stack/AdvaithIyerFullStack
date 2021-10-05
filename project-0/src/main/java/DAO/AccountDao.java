@@ -2,9 +2,11 @@ package DAO;
 
 import models.BankAccount;
 import utils.datastructures.MyArrayList;
-
 import java.sql.*;
 
+/**
+ * This class is used to access data from the account table in the database
+ */
 public class AccountDao implements AccountCrud{
 
     private Connection conn;
@@ -12,6 +14,7 @@ public class AccountDao implements AccountCrud{
     public AccountDao(Connection conn) {
         this.conn = conn;
     }
+
 
     @Override
     public void insert(BankAccount account) throws SQLException {

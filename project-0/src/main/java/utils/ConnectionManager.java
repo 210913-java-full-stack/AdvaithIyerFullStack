@@ -19,8 +19,8 @@ public class ConnectionManager {
 
     }
 
-    /*
-    This is a static method for returning a connection in the factory singleton design pattern
+    /**
+     * This method returns the connection based on the connection properties class
      */
     public static Connection getConnection(){
         if(conn == null) {

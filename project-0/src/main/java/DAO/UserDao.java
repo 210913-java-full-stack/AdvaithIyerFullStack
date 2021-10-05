@@ -3,9 +3,11 @@ package DAO;
 import models.Address;
 import models.User;
 import utils.datastructures.MyArrayList;
-
 import java.sql.*;
 
+/**
+ * This class is used to access data from the users table in the database
+ */
 public class UserDao implements UserCrud{
 
     private Connection conn;

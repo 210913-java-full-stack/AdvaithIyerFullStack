@@ -6,9 +6,11 @@ import utils.datastructures.MyArrayList;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+/**
+ * @param <T> this is the interface that is implemented by AccountDAO
+ *            the generic type is used to enable classes and interfaces as shown below to be parameters
+ */
 public interface AddressCrud<T> {
-
-    Scanner sc = new Scanner(System.in);
 
     public void insert(Address address) throws SQLException;
     public void update(Scanner sc) throws SQLException;

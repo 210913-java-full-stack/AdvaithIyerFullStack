@@ -7,6 +7,9 @@ import utils.datastructures.MyArrayList;
 import java.sql.*;
 import java.util.Scanner;
 
+/**
+ * This class is used to access data from the address table in the database
+ */
 public class AddressDao implements AddressCrud{
 
     private Connection conn;

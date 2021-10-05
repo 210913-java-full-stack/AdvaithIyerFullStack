@@ -17,8 +17,12 @@ public class RegisterMenu {
     public static boolean running = true;
     public static BankAccountUsers model;
 
+    /**
+     * runs the register menu
+     * Uses boolean to run the While-loop
+     * Uses scanner for case statements in order to pick options
+     */
     public static void run() {
-
         while (running) {
             int option = registerScreen();
 
@@ -41,6 +45,11 @@ public class RegisterMenu {
         }
     }
 
+    /**
+     * @return the print statement for registration
+     * It gives the options to either continue to create a new account or quit
+     */
+
     public static int registerScreen() {
         System.out.printf("\n------------------------------------\n"
                 + "\nRegister Menu\n"
@@ -61,6 +70,11 @@ public class RegisterMenu {
         return option;
     }
 
+    /**
+     * The four methods called in this one use respective DAOs and their respective model class
+     * @param model allows the use of the parameter in the case statement loop
+     * @throws SQLException is caught in the case statement loop
+     */
     public static void createAccount(BankAccountUsers model) throws SQLException {
         accountUserSetup();
         accountSetup();

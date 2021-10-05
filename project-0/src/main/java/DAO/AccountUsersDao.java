@@ -7,6 +7,9 @@ import utils.datastructures.MyArrayList;
 import java.sql.*;
 import java.util.Scanner;
 
+/**
+ * This class is used to access data from the accounts_users table in the database
+ */
 public class AccountUsersDao implements AccountUsersCrud{
 
     private Connection conn;

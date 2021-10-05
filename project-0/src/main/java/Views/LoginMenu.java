@@ -12,6 +12,11 @@ import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.Scanner;
 
+/**
+ * This is run if you select option 2 on the Main Menu page
+ * This is where you already want to pick from existing accounts to either view, deposit, or withdraw
+ */
+
 public class LoginMenu {
 
     public static Scanner sc = new Scanner(System.in);
@@ -20,7 +25,10 @@ public class LoginMenu {
 
     public static void run() {
 
-
+        /**
+         * Employs boolean to run the While-loop
+         * Uses Scanner to pick options
+         */
         while (running) {
             int option = loginScreen();
 
@@ -90,6 +98,8 @@ public class LoginMenu {
     /**
      * This is used to view accountId and balance
      * The Locale and NumberFormat classes are used to print the balance in a US currency format
+     * Uses a For-Loop to iterate
+     * ArrayList is the type for accountsUsers as 1 user can have multiple accounts
      */
 
     public static void viewAccounts(int userId) throws SQLException {

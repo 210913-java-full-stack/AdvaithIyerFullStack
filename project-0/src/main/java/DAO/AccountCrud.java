@@ -4,6 +4,10 @@ import models.BankAccount;
 import utils.datastructures.MyArrayList;
 import java.sql.SQLException;
 
+/**
+ * @param <T> this is the interface that is implemented by AccountDAO
+ *            the generic type is used to enable classes and interfaces as shown below to be parameters
+ */
 public interface AccountCrud<T> {
     public void insert(BankAccount account) throws SQLException;
     public void update(BankAccount account) throws SQLException;

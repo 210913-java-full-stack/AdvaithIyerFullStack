@@ -39,6 +39,7 @@ public class MainMenu {
     /**
      * This is used to print a welcome message
      */
+
     public static void homeScreen() {
 
         System.out.printf("\n------------------------------------\n"
@@ -51,6 +52,7 @@ public class MainMenu {
      * This returns the scanner values
      * The try-catch block allows for the scanner to parse the Int after it is typed into the scanner
      * The catch will catch if the scanned value isn't an integer
+     * @return
      */
     public static int loginScreen() {
 

@@ -7,6 +7,9 @@ public class User {
     private String password;
     private int addressId;
 
+    /**
+     * @return allows for this class to return its data as a string, which is useful for when it is called somewhere else
+     */
     public String toString() {
         return this.userId + " - " + this.name + " - " + this.email + " - " + this.password + " - " + this.addressId;
     }
